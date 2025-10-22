@@ -17,13 +17,19 @@ The application also allows the chef to add and remove items from the menu swift
 
 ## Features
 🧱 Dynamic data rendering (data is loaded at runtime, not hardcoded)
+
 💾 Temporary state management using React hooks
+
 🎨 Intuitive and responsive UI elements designed for mobile screens
+
 🧭 Navigation between screens (if applicable)
+
 ⚙️ Form handling and user interaction (if applicable
+
 
 ## Changelog
  - Version 1.0.0
+   
    Created the application and initialised it. For some reason, my first project stopped working
    and no longer accepted commands so now I have to start again last minute.
    Just made the bare mininmum application using blank template and committed.
