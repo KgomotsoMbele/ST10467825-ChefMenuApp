@@ -5,9 +5,13 @@ A menu application that allows users to view the current offerings of the chef.
 
 ## Kgomotso Mbele
 ST10467825 
+
 kgomotsombele@outlook.com
+
 Repository link: [(https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp)]
+
 Module: MAST5112 — Mobile Application Scripting
+
 
 ## Project Overview
 The app demonstrates understanding of UI design principles and state management in React Native, with dynamically loaded data.
@@ -36,15 +40,15 @@ The application also allows the chef to add and remove items from the menu swift
  
 ## Installation and setup
 1. Clone this repository:
-   git clone https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp
+   ```git clone https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp```
 2. Navigate to the project repository:
-   cd ST10467825-ChefMenuApp
+  ```cd ST10467825-ChefMenuApp```
 3. Install dependencies:
-   npm install
+   ```npm install```
 4. Run the app:
-   npx react-native run-android
+   ```npx react-native run-android```
    or for iOS
-   npx react-native run-iOS
+   ```npx react-native run-iOS```
 
 
 ## References  
