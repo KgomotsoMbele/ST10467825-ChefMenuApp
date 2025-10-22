@@ -28,15 +28,22 @@ The application also allows the chef to add and remove items from the menu swift
 
 🧭 Navigation between screens (if applicable)
 
-⚙️ Form handling and user interaction (if applicable
+⚙️ Form handling and user interaction (if applicable)
 
 
 ## Changelog
- - Version 1.0.0
+ - Version 1.0
    
    Created the application and initialised it. For some reason, my first project stopped working
    and no longer accepted commands so now I have to start again last minute.
    Just made the bare mininmum application using blank template and committed.
+
+ - Version 1.1
+
+   Created the base app structure and started setting up the functional components that will be used.
+   Added a ```SafeAreaView``` and ```StatusBar``` to make my UI layout more consistent for all devices. 
+   Ran into some issues regarding my imports but go that sorted by changing to a more updated import 
+   that supports iOS better as well. I added some foundational TS definitions for type safety and scaling.
  
 ## Installation and setup
 1. Clone this repository:
