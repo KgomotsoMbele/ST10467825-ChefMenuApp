@@ -52,7 +52,7 @@ export default function App() {
     }
 
     const newItem: MenuItem = {
-      id: Date.now(),
+      id: menuItems.length + 1, //simple id generation
       name,
       description,
       course: course as Course, //use formatted course
@@ -76,16 +76,20 @@ export default function App() {
 
   //count items by category
   const startersCount = menuItems.filter(
-    (item) => item.course.toLowerCase() === "starter"
+    (item) => item.course.toLowerCase() == "starter"
   ).length;
 
   const mainsCount = menuItems.filter(
-    (item) => item.course.toLowerCase() === "main"
+    (item) => item.course.toLowerCase() == "main"
   ).length;
 
   const dessertsCount = menuItems.filter(
-    (item) => item.course.toLowerCase() === "dessert"
+    (item) => item.course.toLowerCase() == "dessert"
   ).length;
+
+  // Calculate total price of all menu items
+const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
+
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -142,10 +146,12 @@ export default function App() {
         <Text style={styles.countText}>Mains: {mainsCount}</Text>
         <Text style={styles.countText}>Desserts: {dessertsCount}</Text>
       </View>
+      <Text style={styles.countText}>Total Price: R {totalPrice.toFixed(2)}</Text>
+
 
       {/* Menu Items List */}
       <Text style={styles.sectionTitle}>Current Menu</Text>
-      {menuItems.length === 0 ? (
+      {menuItems.length == 0 ? (
         <Text>No menu items added yet. Add some above!</Text>
       ) : (
         <FlatList

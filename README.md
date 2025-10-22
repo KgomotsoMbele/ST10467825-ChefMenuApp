@@ -54,6 +54,10 @@ The application also allows the chef to add and remove items from the menu swift
 
   Added logic to calculate and display item counts by category (Starters, Mains, Desserts) dynamically on the home screen. Implemented `.filter()` based counting for each course type to improve menu visibility for the chef. Updated the layout as well to show category specific stats. Used a dropdown and `picker` to avoid input errors if users don't put in the exact syntax and wording for the course type.
 
+- Version 1.4
+
+  Added dynamic item counts per food category and total price calculation for the menu items. Counts and totals update dynamically as menu items are added, providing the chef with a clear overview of the menu and costs. Updated TypeScript configuration to ensure stricter type checking and better type safety across the app.
+
 ## Installation and setup
 
 1. Clone this repository:
@@ -68,3 +72,14 @@ The application also allows the chef to add and remove items from the menu swift
    `npx react-native run-iOS`
 
 ## References
+1. React Native. 2023. React Native Documentation. [online] Available at: https://reactnative.dev/docs/getting-started
+ [Accessed 22 October 2025].
+
+2. TypeScript. 2023. TypeScript Handbook. [online] Available at: https://www.typescriptlang.org/docs/handbook/intro.html
+ [Accessed 22 October 2025].
+
+3. Expo. 2023. Using FlatList in React Native. [online] Available at: https://docs.expo.dev/versions/latest/sdk/flatlist/
+ [Accessed 22 October 2025].
+
+4. React Native Picker. 2023. React Native Picker Documentation. [online] Available at: https://reactnative.dev/docs/picker
+ [Accessed 22 October 2025]
