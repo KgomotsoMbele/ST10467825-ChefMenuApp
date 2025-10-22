@@ -9,6 +9,7 @@ import {
   ScrollView,
   StatusBar,
 } from "react-native";
+import { Picker } from "@react-native-picker/picker";
 
 /**Menu Item Type */
 
@@ -19,7 +20,7 @@ type MenuItem = {
   id: number; //unique id
   name: string;
   description: string;
-  course: string;
+  course: Course;
   price: number;
 };
 
@@ -38,7 +39,15 @@ export default function App() {
   const handleAddItem = () => {
     //validation check
     if (!name || !description || !course || !price) {
-      alert("Please fill in all fields before adding an item");
+      alert!("Please fill in all fields before adding an item");
+      return;
+    }
+
+    //error handling for course input so that category count is valid
+    const formattedCourse = course.trim().toLowerCase();
+
+    if (!["starter", "main", "dessert"].includes(formattedCourse)) {
+      alert("Course must be Starter, Main, or Dessert");
       return;
     }
 
@@ -46,9 +55,11 @@ export default function App() {
       id: Date.now(),
       name,
       description,
-      course,
+      course: course as Course, //use formatted course
       price: parseFloat(price),
     };
+
+    setMenuItems((prev) => [...prev, newItem]);
 
     //add item to the list
     setMenuItems([...menuItems, newItem]);
@@ -62,6 +73,19 @@ export default function App() {
 
   //count of total items
   const totalCount = menuItems.length;
+
+  //count items by category
+  const startersCount = menuItems.filter(
+    (item) => item.course.toLowerCase() === "starter"
+  ).length;
+
+  const mainsCount = menuItems.filter(
+    (item) => item.course.toLowerCase() === "main"
+  ).length;
+
+  const dessertsCount = menuItems.filter(
+    (item) => item.course.toLowerCase() === "dessert"
+  ).length;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -86,12 +110,17 @@ export default function App() {
           onChangeText={setDescription}
         />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Course (Starter, Main, Dessert)"
-          value={course}
-          onChangeText={setCourse}
-        />
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={course}
+            onValueChange={(value) => setCourse(value)}
+          >
+            <Picker.Item label="Select Course" value="" />
+            <Picker.Item label="Starter" value="starter" />
+            <Picker.Item label="Main" value="main" />
+            <Picker.Item label="Dessert" value="dessert" />
+          </Picker>
+        </View>
 
         <TextInput
           style={styles.input}
@@ -106,6 +135,13 @@ export default function App() {
 
       {/* Display total items */}
       <Text style={styles.countText}>Total Items: {totalCount}</Text>
+
+      {/* Display item counts per category */}
+      <View style={styles.countContainer}>
+        <Text style={styles.countText}>Starters: {startersCount}</Text>
+        <Text style={styles.countText}>Mains: {mainsCount}</Text>
+        <Text style={styles.countText}>Desserts: {dessertsCount}</Text>
+      </View>
 
       {/* Menu Items List */}
       <Text style={styles.sectionTitle}>Current Menu</Text>
@@ -183,5 +219,17 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     alignItems: "center",
+  },
+  countContainer: {
+    marginVertical: 10,
+    padding: 10,
+    backgroundColor: "#f0f0f0",
+    borderRadius: 8,
+  },
+  pickerContainer: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    marginBottom: 10,
   },
 });

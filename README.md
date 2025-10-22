@@ -21,15 +21,15 @@ The application also allows the chef to add and remove items from the menu swift
 
 ## Features
 
-🧱 Dynamic data rendering (data is loaded at runtime, not hardcoded)
+🧱 Dynamic data rendering (data is loaded at runtime)
 
 💾 Temporary state management using React hooks
 
 🎨 Intuitive and responsive UI elements designed for mobile screens
 
-🧭 Navigation between screens (if applicable)
+🧭 Navigation between screens
 
-⚙️ Form handling and user interaction (if applicable)
+⚙️ Form handling and user interaction
 
 ## Changelog
 
@@ -49,6 +49,10 @@ The application also allows the chef to add and remove items from the menu swift
 - Version 1.2
 
   Implemented the main functionality for the home screen by adding a fully controlled form that allows the chef to input new menu items dynamically. Set up individual state variables(`useState`) to capture the dish name, description, course, and price. Added logic to validate input fields and store each new item inside an array. Created a `FlatList` to render the list of menu items in real time and display the total number of dishes currently on the menu. Ensured that all the fields reset after submission for better usability.
+
+- Version 1.3
+
+  Added logic to calculate and display item counts by category (Starters, Mains, Desserts) dynamically on the home screen. Implemented `.filter()` based counting for each course type to improve menu visibility for the chef. Updated the layout as well to show category specific stats. Used a dropdown and `picker` to avoid input errors if users don't put in the exact syntax and wording for the course type.
 
 ## Installation and setup
 
