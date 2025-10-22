@@ -12,12 +12,18 @@ Repository link: [(https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp)]
 
 Module: MAST5112 — Mobile Application Scripting
 
+YouTube link: [Video](https://youtu.be/X03iqC-fkDg)
+
 ## Project Overview
 
 The app demonstrates understanding of UI design principles and state management in React Native, with dynamically loaded data.
 The application also allows the chef to add and remove items from the menu swiftly and easily.
 
-## Goals and Objectives
+## Goals
+
+Creating a digital menu application that allows a private chef to showcase daily dishes in an organized and user-friendly way. 
+Providing a flexible system where the chef can quickly add, view, and manage menu items for each dining experience. 
+Enhancing the customer experience by displaying the menu clearly, including dish details, categories, and pricing.
 
 ## Features
 
@@ -61,15 +67,25 @@ The application also allows the chef to add and remove items from the menu swift
 ## Installation and setup
 
 1. Clone this repository:
+
    `git clone https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp`
+
 2. Navigate to the project repository:
+
    `cd ST10467825-ChefMenuApp`
+
 3. Install dependencies:
+
    `npm install`
+
 4. Run the app:
+
    `npx react-native run-android`
+
    or for iOS
+
    `npx react-native run-iOS`
+
 
 ## References
 1. React Native. 2023. React Native Documentation. [online] Available at: https://reactnative.dev/docs/getting-started

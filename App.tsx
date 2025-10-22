@@ -51,11 +51,12 @@ export default function App() {
       return;
     }
 
+    //create new menu item object
     const newItem: MenuItem = {
       id: menuItems.length + 1, //simple id generation
       name,
       description,
-      course: course as Course, //use formatted course
+      course: course as Course,
       price: parseFloat(price),
     };
 
@@ -118,7 +119,7 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
           <Picker
             selectedValue={course}
             onValueChange={(value) => setCourse(value)}
-          >
+          > //picker-dropdown for course selection
             <Picker.Item label="Select Course" value="" />
             <Picker.Item label="Starter" value="starter" />
             <Picker.Item label="Main" value="main" />
@@ -146,6 +147,7 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
         <Text style={styles.countText}>Mains: {mainsCount}</Text>
         <Text style={styles.countText}>Desserts: {dessertsCount}</Text>
       </View>
+      // Display total price
       <Text style={styles.countText}>Total Price: R {totalPrice.toFixed(2)}</Text>
 
 
@@ -154,6 +156,7 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
       {menuItems.length == 0 ? (
         <Text>No menu items added yet. Add some above!</Text>
       ) : (
+        //list of menu items
         <FlatList
           data={menuItems}
           keyExtractor={(item) => item.id.toString()}
